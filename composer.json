@@ -1,0 +1,21 @@
+{
+    "name": "owl-labs/id-encoder",
+    "description": "Encodes integer ids into string ids and vice versa using hashids/hashids library.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Rybałtowski",
+            "email": "piotrek@owl-labs.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "hashids/hashids": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "OwlLabs\\IdEncoder\\": "src/"
+        }
+    }
+}
