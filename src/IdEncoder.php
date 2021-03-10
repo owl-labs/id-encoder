@@ -56,10 +56,6 @@ final class IdEncoder
         return (string)$object;
     }
 
-    /**
-     * @param string|null $salt
-     * @return HashidsInterface
-     */
     private function getHasher(?string $salt): HashidsInterface
     {
         if ($salt === null) {
@@ -90,10 +86,6 @@ final class IdEncoder
         return $this->hasherWithoutSalt;
     }
 
-    /**
-     * @param string $salt
-     * @return HashidsInterface
-     */
     private function getHasherWithSalt(string $salt): HashidsInterface
     {
         if (!array_key_exists($salt, $this->saltedHashers)) {
@@ -104,12 +96,6 @@ final class IdEncoder
         return $this->saltedHashers[$salt];
     }
 
-    /**
-     * @param string $salt
-     * @param int $minHashLength
-     * @param string $alphabet
-     * @return Hashids
-     */
     private function createHashids(string $salt, int $minHashLength, string $alphabet): Hashids
     {
         return new Hashids($salt, $minHashLength, $alphabet);
